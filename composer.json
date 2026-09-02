@@ -1,9 +1,9 @@
 {
-  "name": "akyos/theme-access-pret-a-porter",
+  "name": "akyos/theme-arleston",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "Thème parent Access access-pret-a-porter (Sage / Acorn / Vite)",
-  "homepage": "https://github.com/akyoscommunication/theme-access-pret-a-porter",
+  "description": "Thème parent Access Arleston (Sage / Acorn / Vite)",
+  "homepage": "https://github.com/akyoscommunication/theme-arleston",
   "authors": [
     {
       "name": "Akyos Communication",
@@ -19,8 +19,8 @@
     "access"
   ],
   "support": {
-    "issues": "https://github.com/akyoscommunication/theme-access-pret-a-porter/issues",
-    "source": "https://github.com/akyoscommunication/theme-access-pret-a-porter"
+    "issues": "https://github.com/akyoscommunication/theme-arleston/issues",
+    "source": "https://github.com/akyoscommunication/theme-arleston"
   },
   "autoload": {
     "psr-4": {
