@@ -1,0 +1,119 @@
+.s-gallery {
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      font-weight: 700;
+      width: fit-content;
+    }
+  }
+
+  &__text {
+    margin-top: rem(8);
+  }
+
+  &-swiper {
+    display: none;
+
+    .c-image {
+      height: rem(450);
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .swiper-buttons {
+      @include flex(row, nowrap, center, center);
+
+      gap: rem(45);
+      margin-top: rem(48);
+
+      @include lessThan(mobileonly) {
+        justify-content: center;
+      }
+
+      .swiper-button-prev, .swiper-button-next {
+        position: initial;
+        width: initial;
+        height: initial;
+        margin-top: initial;
+
+        svg {
+          color: color(text-background_body);
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      .swiper-button-next {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(340), 1fr));
+
+    grid-gap: rem(20);
+    margin-top: rem(32);
+
+    @include lessThan(mobileonly) {
+      @include flex(column, nowrap, center, center);
+    }
+
+    .c-image {
+      position: relative;
+      max-height: rem(354);
+      height: 100%;
+      cursor: pointer;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.001);
+        transition: 0.6s $cubic-transition;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: background .7s $cubic-transition;
+      }
+
+      &:hover {
+        &:after {
+          background: rgba(0, 0, 0, 0.4);
+        }
+
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  @include lessThan(tablet) {
+    .s-gallery {
+      &-swiper {
+        display: block;
+      }
+
+      &-grid {
+        display: none;
+      }
+    }
+  }
+}

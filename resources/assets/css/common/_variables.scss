@@ -1,0 +1,30 @@
+/** FONTS **/
+$font-family: "Manrope", sans-serif;
+$font-family-title: "Manrope", sans-serif;
+$html-font-size: 16px;
+$line-height: 1;
+
+$padding-inline-start: 66;
+$padding-inline-end: 54;
+
+/** RESPONSIVE **/
+$header-height: 40px;
+$header-height-mb: 10px;
+$laptop: 1440px;
+$tablet: 1025px;
+$mobile: 767px;
+$mobileXs: 480px;
+
+/** CONTAINER **/
+$container: 1250px;
+$container-archive: 1096px;
+$container-lg: 1400px;
+$container-md: 1010px;
+
+$default-transition: .3s ease;
+$default-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+
+$cubic-transition: cubic-bezier(.32, .94, .6, 1);
+
+$threshold: 55%;
+$assets-path: '/app/themes/akyos-sage/resources/assets';

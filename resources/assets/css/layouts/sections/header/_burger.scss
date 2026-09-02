@@ -1,0 +1,149 @@
+.header-nav__mobile {
+  display: none;
+
+  @include lessThan(laptop) {
+    @include flex(row-reverse, nowrap, center, center);
+
+    gap: rem(12);
+  }
+
+  #burger {
+    cursor: pointer;
+    position: relative;
+    z-index: 9;
+
+    span {
+      display: block;
+      width: rem(35);
+      height: rem(3);
+      background-color: $light;
+      margin-bottom: rem(6);
+      transition: .7s $cubic-transition;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.is-active {
+    #burger {
+      span {
+        background-color: $light;
+
+        &:nth-child(1) {
+          transform: rotate(-45deg) translate(-7px, 7px);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(45deg) translate(-6px, -6px);
+        }
+      }
+    }
+
+    .menu {
+      mask-size: 300% 100%;
+      pointer-events: all;
+    }
+  }
+
+  &--last-link {
+    .menu {
+      @include undoListStyles;
+
+      li {
+        display: none;
+
+        &:last-child {
+          display: block;
+
+          padding: rem(8) rem(14);
+        }
+      }
+    }
+  }
+
+  &_menu {
+    .menu {
+      @include undoListStyles;
+      @include flex(column, nowrap, flex-start, start);
+
+      gap: rem(61);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      background-color: color(primary);
+      color: color(text-primary);
+      padding: rem(203) 0 rem(131) rem(61);
+
+      mask-image: linear-gradient(90deg, #fff 33.33%, transparent 66.66%);
+      mask-size: 300% 0;
+      mask-repeat: no-repeat;
+      transition-duration: .7s;
+      transition-timing-function: $cubic-transition;
+      transition-property: mask-size;
+      pointer-events: none;
+
+      max-height: 100vh;
+      overflow-y: auto;
+
+      li {
+        &.current-menu-item {
+          a {
+            font-weight: 700;
+          }
+        }
+
+        a {
+          font-size: rem(20) !important;
+        }
+
+        &:has(.sub-menu) {
+          position: relative;
+
+          > a {
+            &:after {
+              content: url($dropdown-icon);
+              margin-left: rem(10);
+            }
+          }
+
+          .sub-menu {
+            @include undoListStyles;
+
+            background-color: color(primary);
+            height: 0;
+            overflow: hidden;
+            top: 100%;
+
+            li {
+              a {
+                display: inline-block;
+                padding: rem(10) rem(20);
+                color: color(text-primary);
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.scrolled {
+  #burger {
+    span {
+      background-color: $light;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.s-team {
+  background: initial !important;
+  position: relative;
+
+  &__background {
+    position: absolute;
+
+    top: rem(60);
+    bottom: 0;
+    width: 100%;
+    background: color(primary);
+  }
+
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      font-weight: 700;
+      width: fit-content;
+      color: color(primary);
+      margin: auto;
+    }
+
+    .s-team {
+      &__text {
+        z-index: 1;
+        position: relative;
+        margin-top: rem(32);
+        color: color(text-primary);
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      &-list {
+        position: relative;
+        z-index: 1;
+        margin-top: rem(48);
+
+        &-wrapper {
+          @include flex(row, wrap, center, center);
+
+          margin-top: rem(48);
+          grid-gap: rem(24);
+
+        }
+
+        .slider--team {
+          .swiper-buttons {
+            @include flex(row, nowrap, center, center);
+
+            gap: rem(64);
+            margin-top: rem(24);
+
+            .swiper-button-prev, .swiper-button-next {
+              position: initial;
+              width: initial;
+              height: initial;
+              margin-top: initial;
+
+              svg {
+                color: color(background_body);
+              }
+
+              &:after {
+                content: none;
+              }
+            }
+
+            .swiper-button-next {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn {
+      margin-top: rem(48);
+
+      &--absolute {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+      }
+    }
+  }
+}

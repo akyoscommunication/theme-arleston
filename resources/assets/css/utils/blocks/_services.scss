@@ -1,0 +1,109 @@
+.s-services {
+  background: initial !important;
+  position: relative;
+
+  &__background {
+    position: absolute;
+
+    top: rem(309);
+    bottom: rem(-98);
+    width: 100%;
+    background: color(primary);
+  }
+
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      font-weight: 700;
+      width: fit-content;
+      color: color(text-background_body);
+    }
+
+    .s-services {
+      &__text {
+        color: color(text-background_body);
+      }
+
+      &-list {
+        position: relative;
+        z-index: 1;
+        margin-top: rem(48);
+
+        &-wrapper {
+          @include flex(row, wrap, center, stretch);
+
+          margin-top: rem(48);
+          grid-gap: rem(24);
+
+          .c-card {
+            //display: grid;
+            //grid-template-rows: rem(392) 1fr;
+            height: initial !important;
+          }
+        }
+
+        .slider--services {
+          .swiper {
+            &-wrapper {
+              @include flex(row, nowrap, stretch, stretch);
+            }
+
+            &-wrapper, &-slide {
+              height: auto;
+            }
+          }
+
+          .swiper-buttons {
+            @include flex(row, nowrap, end, center);
+
+            gap: rem(45);
+            margin-top: rem(48);
+
+            @include lessThan(mobileonly) {
+              justify-content: center;
+            }
+
+            .swiper-button-prev, .swiper-button-next {
+              position: initial;
+              width: initial;
+              height: initial;
+              margin-top: initial;
+
+              svg {
+                color: color(text-primary);
+              }
+
+              &:after {
+                content: none;
+              }
+            }
+
+            .swiper-button-next {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn {
+      margin-top: rem(48);
+
+      &--absolute {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+
+        @include lessThan(mobileonly) {
+          position: relative;
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+}
+
+

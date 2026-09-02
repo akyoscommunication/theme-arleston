@@ -1,0 +1,75 @@
+.s-banner {
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      font-weight: 700;
+      width: fit-content;
+      margin: auto;
+    }
+  }
+
+  &__text {
+    margin-top: rem(8);
+  }
+
+  &-list {
+    margin-top: rem(64);
+
+    &-wrapper {
+      @include flex(row, nowrap, center, center);
+
+      gap: rem(20);
+    }
+
+
+    .slider--banner {
+      .swiper-button-prev, .swiper-button-next {
+        position: initial !important;
+        width: rem(36);
+        height: rem(36);
+
+        svg {
+          color: color(primary);
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      .swiper-button-next {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      .swiper-buttons {
+        @include flex(row, nowrap, space-between, center);
+
+        margin-top: rem(64);
+      }
+    }
+
+    .c-image {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1.001);
+        transition: transform 0.6s $cubic-transition;
+      }
+    }
+
+    a, .c-image {
+      height: rem(192);
+
+
+      &:hover {
+        img {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}

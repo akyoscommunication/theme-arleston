@@ -1,0 +1,19 @@
+.c-articles {
+  padding-top: rem(174);
+
+  @include lessThan(laptop) {
+    padding-top: rem(100);
+  }
+
+  .c-post {
+    margin-bottom: rem(40);
+
+    &-content-header {
+      max-width: rem(522);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

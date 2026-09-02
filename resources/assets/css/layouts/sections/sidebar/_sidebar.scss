@@ -1,0 +1,41 @@
+.s-sidebar {
+  position: fixed;
+  top: rem(-300);
+  bottom: 0;
+  right: rem(46);
+  left: 0;
+  width: fit-content;
+  margin-left: auto;
+  z-index: 99;
+
+  @include lessThan(1322px) {
+    right: rem(15);
+  }
+
+  @include lessThan(mobileonly) {
+    display: none;
+  }
+
+  @media screen and (max-height: 800px) {
+    top: rem(-100);
+  }
+
+
+  &-socials {
+    @include undoListStyles;
+    @include flex(column, nowrap, center, end);
+
+    gap: rem(14);
+    height: 100%;
+
+    li {
+      a {
+        @include flex(row, nowrap, center, center);
+
+        width: rem(34);
+        height: rem(34);
+        background: color(primary);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.s-numbers {
+  > .container {
+    > .c-title {
+      @extend %fs-33;
+
+      font-weight: 700;
+      width: fit-content;
+      margin: auto;
+    }
+  }
+
+  &-list {
+    @include flex(row, wrap, center, stretch);
+
+    margin-top: rem(32);
+    padding: rem(16);
+    border: rem(1) solid $grey;
+
+    .c-number {
+      flex: 1;
+    }
+
+    @include lessThan(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .btn {
+    margin-inline: auto;
+    margin-top: rem(32);
+  }
+}
+

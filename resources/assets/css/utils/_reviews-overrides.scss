@@ -1,0 +1,86 @@
+.s-reviews {
+  position: relative;
+  background: initial !important;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: rem(60);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: color(primary);
+  }
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  > .container > .c-title,
+  &__header > .c-title {
+    @extend %fs-33;
+
+    font-weight: 700;
+    margin-inline: auto;
+    color: color(text-primary);
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    margin-top: rem(32);
+    color: color(text-primary);
+    text-align: center;
+  }
+
+  &__aggregate {
+    justify-content: center;
+    color: color(text-primary);
+  }
+
+  &-list {
+    position: relative;
+    z-index: 1;
+    margin-top: rem(48);
+
+    .slider--reviews {
+      .swiper-buttons {
+        @include flex(row, nowrap, center, center);
+
+        gap: rem(64);
+        margin-top: rem(24);
+
+        svg {
+          color: color(text-primary);
+        }
+
+        .swiper-button-next svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &-item {
+    background-color: color(background_body);
+    color: color(dark);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    &__avatar img {
+      width: rem(80);
+      height: rem(80);
+    }
+
+    &__star.is-filled {
+      color: color(primary);
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.sub-footer {
+  @include flex(row, wrap, space-between, center);
+
+  background-color: color(primary);
+  color: color(text-primary);
+  max-width: rem(1062);
+  width: 100%;
+  margin: auto;
+  padding: rem(56) rem(148);
+  transform: translateY(rem(48));
+  gap: rem(32);
+
+  @include lessThan(laptop) {
+    padding: rem(56) rem(60);
+
+    .c-title {
+      text-align: center;
+      margin: auto;
+    }
+
+    .btn {
+      margin-inline: auto;
+      margin-top: rem(20);
+    }
+  }
+
+  @include lessThan(mobileonly) {
+    padding: rem(32) rem(16);
+  }
+
+  .c-title {
+    @extend %fs-33;
+
+    font-weight: 700;
+  }
+}

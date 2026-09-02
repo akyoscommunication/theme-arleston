@@ -1,0 +1,37 @@
+.c-number {
+  display: grid;
+  grid-template-rows: rem(193) rem(82) 1fr;
+
+  gap: rem(21);
+  text-align: center;
+
+  .c-image {
+    margin: auto;
+    width: clamp(50px, 100%, 93px);
+  }
+
+  &__line {
+    height: initial;
+    width: rem(1);
+    background: $grey;
+
+    &:last-child {
+      display: none;
+    }
+
+    @include lessThan(tablet) {
+      width: 100%;
+      height: rem(1);
+      margin: rem(20) 0;
+    }
+  }
+
+  &__title {
+    @extend %fs-58;
+
+    font-weight: 400;
+    font-family: "Nohemi", sans-serif;
+    line-height: 1.4;
+  }
+}
+

@@ -1,0 +1,22 @@
+.c-socials {
+  @include undoListStyles;
+  @include flex(row, nowrap, center, center);
+
+  gap: rem(14);
+
+  li {
+    .btn {
+      @include flex(row, nowrap, center, center);
+
+      width: rem(24);
+      height: rem(24);
+      border-radius: 50%;
+      background-color: color(primary);
+
+      svg {
+        width: rem(12);
+        height: rem(12);
+      }
+    }
+  }
+}

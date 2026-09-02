@@ -1,0 +1,68 @@
+.home {
+  .s-hero {
+    .c-image {
+      height: rem(704);
+    }
+  }
+}
+
+.s-hero {
+  position: relative;
+  color: $light !important;
+
+  .c-image {
+    height: rem(620);
+
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      animation: zoom-out 1.5s $cubic-transition;
+    }
+  }
+
+  &-overlay {
+    @include flex(row, nowrap, center, center);
+
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    &-content {
+      @include flex(column, nowrap, center, center);
+
+      max-width: rem(619);
+      width: 100%;
+      color: color(light);
+
+      @include lessThan(tablet) {
+        padding: 0 rem(50);
+      }
+
+      @include lessThan(mobileonly) {
+        padding: 0 rem(15);
+      }
+
+      .c-title {
+        @extend %fs-42;
+
+        font-weight: 700;
+        text-align: center;
+      }
+
+      &__text {
+        text-align: center;
+        margin-top: rem(32);
+
+        a {
+          text-decoration: underline;
+        }
+      }
+
+      .btn {
+        margin-top: rem(64);
+      }
+    }
+  }
+}
